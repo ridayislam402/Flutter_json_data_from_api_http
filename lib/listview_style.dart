@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:json_data_from_api_http/home_detail.dart';
 
 import 'model.dart';
 
@@ -14,6 +15,11 @@ class ListStyleModel extends StatelessWidget {
       child: ListTile(
         title: Text(item.title),
         subtitle: Text(item.body),
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return HomeDetail(item: item);
+          },));
+        },
         
       ),
     );
